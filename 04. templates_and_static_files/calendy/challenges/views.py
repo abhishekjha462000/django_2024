@@ -9,7 +9,7 @@ challenges = {
     'March' : 'Lower down your body fat percentage.',
     'April' : "Master Js and ReactJs.",
     'May' : 'Complete Machine learning.',
-    'June' : 'It\'s my birthday.',
+    'June' : None,
     'July' : 'Apply for jobs.',
     'August' : 'Starts talking to Dr. Priyanka.',
     'September' : 'Propose to Priyanka.',
