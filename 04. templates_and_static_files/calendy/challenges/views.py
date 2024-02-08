@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect, Http404
 from django.urls import reverse
 from django.template.loader import render_to_string
 
@@ -53,5 +53,7 @@ def monthly_challenge(request, month):
         response_data = render_to_string('challenges/challenge.html', {'month':month, 'challenge':challenge})
 
         return HttpResponse(response_data)
+    # except KeyError as ex:
+    #     return HttpResponseNotFound('<h1>This is an invalid month</h1>')
     except KeyError as ex:
-        return HttpResponseNotFound('<h1>This is an invalid month</h1>')
+        return Http404() # This function automatically detects the 404.html file inside the root templates folder.

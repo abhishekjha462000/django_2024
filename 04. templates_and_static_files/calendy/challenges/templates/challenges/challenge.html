@@ -1,11 +1,12 @@
 {% extends "base.html" %}
+{%load static%}
 
 {%block page_title%}
     {{month|title}}
 {%endblock%}
 
 {%block content%}
-
+    {% include 'challenges/includes/header.html'%}
     <h1>{{month|title}} Challenge</h1>
     {%if challenge is not None%}
         <h1>{{challenge}}</h1>
@@ -13,4 +14,8 @@
         <h1>Since challenge was None, it's my birthday</h1>
     {%endif%}
 
+{%endblock%}
+
+{%block css_file%}
+    <link href = "{% static 'challenges/style.css' %}" rel = "stylesheet">
 {%endblock%}
