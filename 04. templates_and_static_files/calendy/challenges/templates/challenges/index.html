@@ -6,9 +6,11 @@
     <title>{{month|title}}</title>
 </head>
 <body>
-
-    <!-- This is the tags -->
-    <h1>{{month|title}} Challenge</h1>
-    <h1>{{challenge}}</h1>
+    <h1>All challenges</h1>
+    <ul>
+        {%for month in months%}
+            <li><h1><a href = '{%url 'monthly-challenge' month%}'>{{month}}</a></h1></li>
+        {% endfor %}
+    </ul>
 </body>
 </html>

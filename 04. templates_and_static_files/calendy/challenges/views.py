@@ -23,15 +23,17 @@ def home(request):
 
     months = list(challenges.keys())
 
-    months_lis = '<ul>'
+    return render(request, 'challenges/index.html', {'months': months})
 
-    for month in months:
-        element = f"<li><h1><a href = '{reverse('monthly-challenge', args = [month])}'>{month}</a></h1></li>"
-        months_lis += element
+    # months_lis = '<ul>'
 
-    months_lis += '</ul>'
+    # for month in months:
+    #     element = f"<li><h1><a href = '{reverse('monthly-challenge', args = [month])}'>{month}</a></h1></li>"
+    #     months_lis += element
 
-    return HttpResponse(response_data + months_lis)
+    # months_lis += '</ul>'
+
+    # return HttpResponse(response_data + months_lis)
 
 def monthly_challenge_by_integer(request, value):
     if value < 1 or value > len(challenges):
