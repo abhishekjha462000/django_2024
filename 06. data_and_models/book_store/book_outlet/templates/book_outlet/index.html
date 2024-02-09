@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{%load static%}
+
+{%block page_title%}
+    All Books
+{%endblock%}
+
+{%block content%}
+    <ul>
+        {%for book in books%}
+            <li><h1><a href ='{%url "rated_book" book.rating %}' >{{book.title}} (rating = {{book.rating}})</a></h1></li>
+        {%endfor%}
+    </ul>
+{%endblock%} 
+
+{%block css_file%}
+    <link href = '{%static "book_outlet/style.css" %}' rel = 'stylesheet'>
+{%endblock%}

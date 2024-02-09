@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+    rating ({{book.rating}})
+{% endblock %}
+
+{%block content%}
+    <h1>title = {{book.title}}</h1>
+    <h1>rating = {{book.rating}}</h1>
+    <h1>author = {{book.author}}</h1>
+{%endblock%}

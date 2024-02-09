@@ -1,0 +1,8 @@
+a {
+    text-decoration: None;
+    color: black;
+}
+
+a:hover {
+    color:blueviolet;
+}
