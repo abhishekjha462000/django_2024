@@ -8,7 +8,9 @@
 {%block content%}
     <ul>
         {%for book in books%}
-            <li><h1><a href ='{%url "rated_book" book.rating %}' >{{book.title}} (rating = {{book.rating}})</a></h1></li>
+            {% comment %} <li><h1><a href ='{%url "rated_book" book.rating %}' >{{book.title}} (rating = {{book.rating}})</a></h1></li> {% endcomment %}
+            <li><h1><a href = '{{book.url}}' >{{book.title}}  (rating = {{book.rating}})</a></h1></li>
+
         {%endfor%}
     </ul>
 {%endblock%} 

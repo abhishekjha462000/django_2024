@@ -24,7 +24,7 @@ def index(request):
         
         books_fetched = list(Book.objects.all())
     
-    books = [dict(title = book.title, rating = book.rating) for book in books_fetched]
+    books = [dict(title = book.title, rating = book.rating, url = book.get_book_url) for book in books_fetched]
 
     
     return render(request, 'book_outlet/index.html', {'books':books})
@@ -58,3 +58,15 @@ def delete_book_by_rating(request, rating):
 
     redirected_url = reverse('all_books', args = [])
     return HttpResponseRedirect(redirected_url)
+
+
+def get_book_by_id(request, id):
+    # Get the book with required id
+    # book = Book.objects.get(id = id)
+    book = Book.objects.get(pk = id)
+
+    # get the rating of the book and redirect to the book page which has that rating
+    rating = book.rating
+    redirect_path = reverse('rated_book', args = [rating])
+
+    return HttpResponseRedirect(redirect_path)

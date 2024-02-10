@@ -8,4 +8,11 @@
     <h1>title = {{book.title}}</h1>
     <h1>rating = {{book.rating}}</h1>
     <h1>author = {{book.author}}</h1>
+    <h1>
+        {%if book.bestselling %}
+            This was a bestselling book.
+        {%else%}
+            This was not a bestselling book.
+        {%endif%}
+    </h1>
 {%endblock%}
